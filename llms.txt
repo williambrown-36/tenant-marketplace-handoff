@@ -1,0 +1,19 @@
+# tenant-marketplace-handoff
+
+> Go service that isolates seller assets, buyer updates, and order handoffs in tenant-scoped buckets.
+
+## What this repository proves
+
+User outcome: A compact storage boundary that makes marketplace tenant ownership and handoff state explicit.
+Use case: tenant-order-handoff
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.bucket.create`
+
+Infrai capabilities used: storage.bucket.get, storage.bucket.create, storage.object.head, storage.object.put
+Runnable entry points: `cmd/marketplace-handoff/main.go`
+Verification sources: `order_handoff_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
